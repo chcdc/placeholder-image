@@ -3,3 +3,12 @@
 ## Template Placeholder Images
 
 ### Application in Django to generate placeholder images
+
+Usage
+
+```sh
+$ git clone https://github.com/chcdc/placeholder-image.git && cd 
+$ cd placeholder-image/
+```
+
+pip install -r requirements.txt 
