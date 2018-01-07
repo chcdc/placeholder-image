@@ -13,7 +13,13 @@ $ pip install -r requirements.txt
 $ pyhton3 placeholder.py runserver
 ```
 
-Access your Browser
+#### Access your Browser
 
+```http://localhost:8000```
+![](https://user-images.githubusercontent.com/10574354/34646225-9c5553bc-f349-11e7-966d-650ed5b4f2b7.png)
+
+#### For generate image
 ```http://localhost:8000/image/<width>x<height>/```
+
+
 
