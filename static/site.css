@@ -1,0 +1,15 @@
+body {
+	font-size: 1em;
+	text-align: center;
+}
+
+h1 {
+	display: block;
+}
+ul {
+	list-style: none;
+}
+
+li {
+	display: inline-block;
+}
