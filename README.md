@@ -15,5 +15,5 @@ $ pyhton3 placeholder.py runserver
 
 Access your Browser
 
-http://localhost:8000/image/<width>x<height>/
+```http://localhost:8000/image/<width>x<height>/```
 
