@@ -7,8 +7,14 @@ from PIL import Image, ImageDraw
 
 from django.conf import settings
 
+DEBUG = os.environ.get('DEBUG', 'off') == 'off'
+
 SECRET_KEY = os.environ.get('SECRET_KEY', '&yl06#la7^3b$f6_f=4@5c=%g@c892v@6ts-q62xx&reyee2^t')
+
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost').split(',')
+
+BASE_DIR = os.path.dirname(__file__)
+
 
 settings.configure(
 	DEBUG=DEBUG,
@@ -38,9 +44,11 @@ settings.configure(
 from django import forms
 from django.conf.urls import url
 from django.core.cache import cache
+from django.core.urlresolvers import reverse
 from django.core.wsgi import get_wsgi_application
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.views.decorators.http import etag
+from django.shortcuts import render
 
 
 class ImageForm(forms.Form):
@@ -82,7 +90,11 @@ def placeholder(request, width, height):
 		return HttpResponseBadRequest('Invalid Image Request')
 
 def index(request):
-	return HttpResponse('Initial')
+	example = reverse('placeholder', kwargs={'width': 50, 'height':50})
+	context = {
+		'example': request.build_absolute_uri(example)
+	}
+	return render(request, 'home.html', context)
 
 
 urlpatterns = (
