@@ -7,8 +7,13 @@
 Usage
 
 ```sh
-$ git clone https://github.com/chcdc/placeholder-image.git && cd 
+$ git clone https://github.com/chcdc/placeholder-image.git
 $ cd placeholder-image/
+$ pip install -r requirements.txt 
+$ pyhton3 placeholder.py runserver
 ```
 
-pip install -r requirements.txt 
+Access your Browser
+
+http://localhost:8000/image/<width>x<height>/
+
