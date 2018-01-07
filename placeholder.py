@@ -37,12 +37,18 @@ from django.conf.urls import url
 from django.core.wsgi import get_wsgi_application
 from django.http import HttpResponse, HttpResponseBadRequest
 
+def placeholder(request, width, height):
+	form = ImageForm({'height': height, 'width': width})
+	
 def index(request):
 	return HttpResponse('Initial')
 
+
 urlpatterns = (
-	url(r'^$', index),
-)
+	url(r'^image/(?P<width>[0-9]+)x(?P<height>[0-9]+)/$', placeholder,
+		name='placeholder'),
+	url(r'^$', index, name="homepage"),
+	)
 
 application = get_wsgi_application()
 
