@@ -10,7 +10,7 @@ Usage
 $ git clone https://github.com/chcdc/placeholder-image.git
 $ cd placeholder-image/
 $ pip install -r requirements.txt 
-$ pyhton3 placeholder.py runserver
+$ python3 placeholder.py runserver
 ```
 
 #### Access your Browser
